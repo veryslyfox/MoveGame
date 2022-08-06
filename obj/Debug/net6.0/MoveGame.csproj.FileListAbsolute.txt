@@ -1,0 +1,15 @@
+C:\Users\Лисёнок\Documents\MoveGame\bin\Debug\net6.0\MoveGame.exe
+C:\Users\Лисёнок\Documents\MoveGame\bin\Debug\net6.0\MoveGame.deps.json
+C:\Users\Лисёнок\Documents\MoveGame\bin\Debug\net6.0\MoveGame.runtimeconfig.json
+C:\Users\Лисёнок\Documents\MoveGame\bin\Debug\net6.0\MoveGame.dll
+C:\Users\Лисёнок\Documents\MoveGame\bin\Debug\net6.0\ref\MoveGame.dll
+C:\Users\Лисёнок\Documents\MoveGame\bin\Debug\net6.0\MoveGame.pdb
+C:\Users\Лисёнок\Documents\MoveGame\obj\Debug\net6.0\MoveGame.csproj.AssemblyReference.cache
+C:\Users\Лисёнок\Documents\MoveGame\obj\Debug\net6.0\MoveGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Лисёнок\Documents\MoveGame\obj\Debug\net6.0\MoveGame.AssemblyInfoInputs.cache
+C:\Users\Лисёнок\Documents\MoveGame\obj\Debug\net6.0\MoveGame.AssemblyInfo.cs
+C:\Users\Лисёнок\Documents\MoveGame\obj\Debug\net6.0\MoveGame.csproj.CoreCompileInputs.cache
+C:\Users\Лисёнок\Documents\MoveGame\obj\Debug\net6.0\MoveGame.dll
+C:\Users\Лисёнок\Documents\MoveGame\obj\Debug\net6.0\ref\MoveGame.dll
+C:\Users\Лисёнок\Documents\MoveGame\obj\Debug\net6.0\MoveGame.pdb
+C:\Users\Лисёнок\Documents\MoveGame\obj\Debug\net6.0\MoveGame.genruntimeconfig.cache
