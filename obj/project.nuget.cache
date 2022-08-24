@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "9nQdSzzLdYpHZJLum2PeHhncWcDXDUvyegHNlBaEwTPHfk01e9V4fXVR+aC9psXOYBOhOE9cABeRZbVP6bGX6A==",
+  "dgSpecHash": "OoESSd+ccJtWAK9MskKSup0a0Cc4EWPB1yZSiMCppXtTTShdu0/UI2y+60y7hHLsV+DTE/M9XpdBfqw6aUJNsQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Лисёнок\\Documents\\MoveGame\\MoveGame.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Лисёнок\\.nuget\\packages\\csvhelper\\28.0.1\\csvhelper.28.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

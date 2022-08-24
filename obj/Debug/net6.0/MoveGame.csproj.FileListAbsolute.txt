@@ -13,3 +13,5 @@ C:\Users\Лисёнок\Documents\MoveGame\obj\Debug\net6.0\MoveGame.dll
 C:\Users\Лисёнок\Documents\MoveGame\obj\Debug\net6.0\ref\MoveGame.dll
 C:\Users\Лисёнок\Documents\MoveGame\obj\Debug\net6.0\MoveGame.pdb
 C:\Users\Лисёнок\Documents\MoveGame\obj\Debug\net6.0\MoveGame.genruntimeconfig.cache
+C:\Users\Лисёнок\Documents\MoveGame\bin\Debug\net6.0\CsvHelper.dll
+C:\Users\Лисёнок\Documents\MoveGame\obj\Debug\net6.0\MoveGame.csproj.CopyComplete

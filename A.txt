@@ -1,0 +1,11 @@
+class Person
+{
+    string _name;
+    int _age;
+    public Person(string name, int age)
+    {
+        _name = name;
+        _age = age;
+    }
+}
+clas ##pe rson begi stri ##_n ame` fiel inte ##_a ge`` fiel publ ##pe rson stri ##na me`` inte ##ag e```  begi  endd endd 

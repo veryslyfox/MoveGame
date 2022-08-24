@@ -1,4 +1,0 @@
-interface ILevelCompiler
-{
-    Level[] GetLevels();
-}  

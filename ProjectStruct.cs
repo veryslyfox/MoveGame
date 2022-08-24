@@ -1,23 +1,23 @@
-class Cell
+abstract class Cell
 {
 }
 class Empty : Cell
 {
 
 }
-class Path : Cell
-{
-    public Path(Cell cell, int pulse, int periodFromPathOpen)
-    {
-        Cell = cell;
-        Pulse = pulse;
-        PeriodFromPathOpen = periodFromPathOpen;
-    }
+// class Path : Cell
+// {
+//     public Path(Cell cell, int pulse, int periodFromPathOpen)
+//     {
+//         Cell = cell;
+//         Pulse = pulse;
+//         PeriodFromPathOpen = periodFromPathOpen;
+//     }
 
-    public Cell Cell { get; set; }
-    public int Pulse { get; }
-    public int PeriodFromPathOpen { get; set; }
-}
+//     public Cell Cell { get; set; }
+//     public int Pulse { get; }
+//     public int PeriodFromPathOpen { get; set; }
+// }
 class Key : Cell
 {
     public Key(Door door)
@@ -36,24 +36,24 @@ class Door : Cell
 
     public ConsoleColor Color { get; }
 }
-class Tail : Cell
-{
-    public Tail(Cell cell)
-    {
-        Cell = cell;
-    }
+// class Tail : Cell
+// {
+//     public Tail(Cell cell)
+//     {
+//         Cell = cell;
+//     }
 
-    public Cell Cell { get; }
-}
-class Generator : Cell
-{
-    public Generator(Cell cell)
-    {
-        Cell = cell;
-    }
+//     public Cell Cell { get; }
+// }
+// class Generator : Cell
+// {
+//     public Generator(Cell cell)
+//     {
+//         Cell = cell;
+//     }
 
-    public Cell Cell { get; }
-}
+//     public Cell Cell { get; }
+// }
 class DirectedGenerator : Cell
 {
     public DirectedGenerator(MoveObject moveObject, Direct direct)
@@ -63,14 +63,21 @@ class DirectedGenerator : Cell
 
     public MoveObject MoveObject { get; }
 }
-class MoveObject : Cell
+abstract class MoveObject : Cell
 {
-    public MoveObject(Direct direct)
+    public MoveObject(Direct direct, int moveIntervalTime)
     {
         Direct = direct;
+        MoveIntervalTime = moveIntervalTime;
     }
 
     public Direct Direct { get; }
+    public long MoveIntervalTime { get; }
+    public long LastMoveTime { get; set; }
+    public abstract void Collide(Cell cell);
+}
+class Personage : Cell
+{
 }
 enum Direct
 {
@@ -78,14 +85,4 @@ enum Direct
     Right,
     Up,
     Down
-}
-class Account
-{
-    public Account(string name)
-    {
-        Name = name;
-    }
-
-    public string Name { get; set; }
-    public int Progress { get; private set; }
 }
