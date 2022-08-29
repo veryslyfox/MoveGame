@@ -229,11 +229,13 @@ static class Program
         {
             return $"generator({ToString(directedGenerator.MoveObject)})";
         }
-        Debugger.Debug = "new cell type??";
+        Debugger.Problem = "new cell type";
+        Debugger.ProblemFile = "Program.cs";
+        Debugger.ProblemString = 231;
         return "";
     }
     static void DrawField()
     {
-        Console.Write(Debugger.Debug);
+        Console.Write(Debugger.Problem);
     }
 }
