@@ -6,11 +6,12 @@ using CsvHelper.Configuration;
 static class Program
 {
 #pragma warning disable
-    public static Cell[,] _field;
-    public static AccountRecord _account;
+    static Cell[,] _field;
+    static AccountRecord _account;
     static Language _language;
     static int _personageX;
     static int _personageY;
+    static bool _onEngine;
 #pragma warning restore
     static void Main()
     {
@@ -21,9 +22,16 @@ static class Program
             _personageY = 0;
             while (true)
             {
-                Next();
-                ProcessInput();
-                DrawField();
+                if (_onEngine)
+                {
+                    Next();
+                    ProcessInput();
+                    DrawField();
+                }
+                else
+                {
+                    Engine.ProcessLogic();
+                }
             }
         }
         catch (Exception exception)
@@ -45,8 +53,9 @@ static class Program
                 var cell = _field[column, row];
                 if (cell is MoveObject moveObject)
                 {
-                    if (GetTime(moveObject) - moveObject.LastMoveTime >= moveObject.MoveIntervalTime)
+                    if (GetCurrentTime() - moveObject.LastMoveTime >= moveObject.MoveIntervalTime)
                     {
+                        moveObject.LastMoveTime = GetCurrentTime();
                         if (moveObject.Direct == Direct.Left && column == 0)
                         {
                             var v = _field[--column, row];
@@ -141,6 +150,9 @@ static class Program
         var command = Console.ReadLine();
         var command2 = Console.ReadLine();
         var age = int.Parse(command2);
+        var stream = File.Open("levels.txt", FileMode.Open);
+        var writer = new FileWriter();
+        var reader = new FileReader();
         bool StartsWith(string commandStart)
         {
             return command.StartsWith(commandStart, StringComparison.InvariantCultureIgnoreCase);
@@ -151,19 +163,23 @@ static class Program
         }
         if (StartsWith("rename account "))
         {
-            _account = new(command.Substring(15), age, _account.Progress);
+            _account = new AccountRecord(command.Substring(15), age, _account.Progress);
         }
         if (StartsWith("переименовать аккаунт "))
         {
-            _account = new(command.Substring(22), age, _account.Progress);
+            _account = new AccountRecord(command.Substring(21), age, _account.Progress);
         }
         if (StartsWith("add account "))
         {
-            AddAccount(command.Substring(12), age);
+            writer.Write("accounts.txt", command.Substring(12) + "," + age);
         }
         if (StartsWith("добавить аккаунт "))
         {
-            AddAccount(command.Substring(17), age);
+            writer.Write("accounts.txt", command.Substring(17) + "," + age);
+        }
+        if (command == "on engine")
+        {
+            _onEngine = true;
         }
     }
     static void ProcessInput()
@@ -211,15 +227,14 @@ static class Program
             return record;
         }
     }
-    
+
     public sealed record AccountRecord(string Name, int Age, int Progress);
-    static long GetTime(MoveObject moveObject)
+    static long GetCurrentTime()
     {
         var time = Stopwatch.GetTimestamp();
-        moveObject.LastMoveTime = time;
         return time;
     }
-    static string ToString(Cell cell)
+    public static string ToString(Cell cell)
     {
         if (cell is Empty empty)
         {
@@ -236,6 +251,7 @@ static class Program
     }
     static void DrawField()
     {
+        var level = LevelCompiler.GetLevel(_account.Progress);
         Console.Write(Debugger.Problem);
     }
 }

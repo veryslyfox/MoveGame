@@ -1,7 +1,14 @@
-class Database
+using Account = Program.AccountRecord;
+class AccountDatabase
 {
-    public Database(Program.AccountRecord[] accounts)
+    public AccountDatabase(Account[] accounts)
     {
-        
+        Accounts = accounts;
     }
+
+    public Account[] Accounts { get; }
+}
+class LevelDatabase
+{
+    
 }

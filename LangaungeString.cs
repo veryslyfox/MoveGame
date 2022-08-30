@@ -21,7 +21,9 @@ class LanguageString
                 break;
             default :
                 result = "";
-                Debugger.Debug = "langaunge unspecified??";
+                Debugger.Problem = "langaunge unspecified??";
+                Debugger.ProblemFile = "Langaunge.cs";
+                Debugger.ProblemString = 22;
                 break;
         }
         return result;

@@ -1,10 +1,5 @@
 class FileWriter
 {
-    public FileWriter(Stream stream)
-    {
-        Stream = stream;
-    }
-
     public void Write(string file, string text)
     {
         using var stream = File.Open(file, FileMode.OpenOrCreate);
@@ -26,7 +21,6 @@ class FileWriter
         }
     }
     static string NewLine { get => "\n\r"; }
-    public Stream Stream { get; }
 
     public static byte[] AsByte(string s)
     {
@@ -45,7 +39,7 @@ interface IStringConverter<T>
     {
         public string? ToString(T value)
         {
-            return value!.ToString();
+            return value.ToString();
         }
     }
     public static IStringConverter<T> Create()
